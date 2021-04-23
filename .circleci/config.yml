@@ -12,9 +12,7 @@ jobs:
       - image: amazon/aws-cli
     steps:
       - checkout
-      - run:  aws cloudformation \
-              list-exports --query "Exports[?Name==\`PipelineID\`].Value" \
-              --no-paginate --output text 
+      - run:  aws cloudformation  list-exports --query "Exports[?Name==\`PipelineID\`].Value"  --no-paginate --output text 
 
   promote_to_production:
     docker:
